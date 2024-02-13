@@ -1,0 +1,4 @@
+body.rise-enabled .reveal ol, body.rise-enabled .reveal dl, body.rise-enabled .reveal ul, body.rise-enabled .reveal h1, body.rise-enabled .reveal h2, body.rise-enabled .reveal h3, body.rise-enabled .reveal h4, body.rise-enabled .reveal img{
+    margin-left: 5%;
+    margin-right: 5%;
+}
