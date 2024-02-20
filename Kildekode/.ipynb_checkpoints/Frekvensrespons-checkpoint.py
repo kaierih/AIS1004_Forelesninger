@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import scipy.signal as sig
 from ipywidgets import interact, fixed, FloatSlider, IntSlider, HBox, VBox, interactive_output, Layout
 import ipywidgets as widget
+from numpy.typing import ArrayLike
 
 class FreqRespDemo:
     def __init__(self, b, a, fig_num=1, figsize=(8,6)):
@@ -33,7 +34,7 @@ class FreqRespDemo:
         #ax11.set_xticks(np.linspace(0, 1, 5)*pi)
         #ax11.set_xticklabels([r'$'+str(round(i,2))+'\pi$' for i in np.linspace(0, 1, 5)])
         ax11.set_xlabel(r'Frekvens $f$ (Hz)')
-        ax11.set_ylabel(r'Forsterking (Gain) $')
+        ax11.set_ylabel(r'Forsterking (Gain) ')
         ax11.grid(True)
         ax11.set_title('placeholder')
         self.ax11 = ax11
@@ -79,7 +80,7 @@ class FreqRespDemo:
         
        
         # Confiugre Layout
-        #self.fig.tight_layout(pad=0.5, w_pad=1.0, h_pad=1.0)
+        self.fig.tight_layout()
         
         #Set up slider panel
         freq_slider = widget.FloatSlider(
@@ -112,7 +113,7 @@ class FreqRespDemo:
         
         self.ax11.set_title(r"$\left| H \left(j2\pi \cdot %.2f \right) \right| = %.2f$"%(self.f[index], self.Hw_amp[index]))
         self.ax12.set_title(r"$\angle H \left(j2\pi \cdot %.2f \right) = %.1f^{\circ}$"%(self.f[index], self.Hw_phase[index]))
-        titlestr = r"""$v_{inn}(t) = \sin(2\pi\cdot %.2f \cdot t), \ \ \ \ \ v_{ut}(t) = %.2f\cdot\sin(2\pi\cdot %.2f \cdot t +%.1f^{\circ}), \ \ \ \ \ 0 \leq t < %.f$
+        titlestr = r"""$v_{inn}(t) = \sin(2\pi\cdot %.2f \cdot t), \ \ \ \ \ v_{ut}(t) = %.2f\cdot\sin(2\pi\cdot %.2f \cdot t +%.1f^{\circ}), \ \ \ \ \ 0 \leq t < %.3f$
                     """%(self.f[index],self.Hw_amp[index], self.f[index], self.Hw_phase[index], T) 
         titlestr=titlestr.replace("+-", "-")
         self.ax2.set_title(titlestr)        
