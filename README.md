@@ -8,3 +8,4 @@ Her er en oversikt over undervisningsnotatene:
 |---|---|
 |13. februar| [Intro til frekvensavhengige kretser](Uke07_Intro_RLC.ipynb)|
 |15. februar| [AC-spenning og Impedans](Uke07_Impedans.ipynb)|
+
